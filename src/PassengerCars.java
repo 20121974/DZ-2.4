@@ -2,8 +2,7 @@ public class PassengerCars extends Transport implements Competing{
     public PassengerCars(String lada, String grande, double v) {
 
     }
-
-    @Override
+@Override
     public void refill() {
 
     }
@@ -27,4 +26,14 @@ public class PassengerCars extends Transport implements Competing{
     public int maximumSpeed() {
         return 0;
     }
+
+    public enum BodyType {Sedan("Седан"), Hatchback("Хетчбек"), Coupe("Купе"), StationWagon("Универсал")
+        , SUV("Внедорожник"), Crossover("Кроссовер"), PickupTruck ("Пикап"), Van("Фургон"),
+        Minivan("Минивэн");
+
+        BodyType(String B) {
+        }
+
+    }
+
 }
