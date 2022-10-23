@@ -1,8 +1,9 @@
-public class PassengerCars extends Transport implements Competing{
+public class PassengerCars extends Transport implements Competing {
     public PassengerCars(String lada, String grande, double v) {
 
     }
-@Override
+
+    @Override
     public void refill() {
 
     }
@@ -27,13 +28,30 @@ public class PassengerCars extends Transport implements Competing{
         return 0;
     }
 
-    public enum BodyType {Sedan("Седан"), Hatchback("Хетчбек"), Coupe("Купе"), StationWagon("Универсал")
-        , SUV("Внедорожник"), Crossover("Кроссовер"), PickupTruck ("Пикап"), Van("Фургон"),
+    public enum BodyType {
+        Sedan("Седан"), Hatchback("Хетчбек"), Coupe("Купе"), StationWagon("Универсал"), SUV("Внедорожник"), Crossover("Кроссовер"), PickupTruck("Пикап"), Van("Фургон"),
         Minivan("Минивэн");
+        private String body;
 
-        BodyType(String B) {
+        BodyType(String body) {
+            this.body = body;
+        }
+        public String getBody() {
+            return body;
+        }
+        public void setBody(String body) {
+            this.body = body;
         }
 
+        public BodyType determineTheTypeOfCar(String body) {
+            for (BodyType bodyType:values()){
+                if (bodyType.getBody().equals(body)) {
+                    return bodyType;
+                }
+            }
+            System.out.println("Данных недостаточно");
+            return null;
+        }
     }
 
 }
