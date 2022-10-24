@@ -1,5 +1,6 @@
 public class Buses extends Transport implements Competing {
     public Buses(String lada, String grande, double i) {
+        super();
     }
 
     @Override
@@ -9,7 +10,7 @@ public class Buses extends Transport implements Competing {
 
     @Override
     public void refill() {
-
+        System.out.println("Заправь автобус дизелем на заправке");
     }
 
     @Override

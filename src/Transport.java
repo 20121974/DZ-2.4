@@ -23,7 +23,8 @@ public abstract class Transport {
         this.engineVolume = engineVolume;
     }
 
-    protected Transport() {
+    public Transport() {
+
     }
 
     public void startMoving() {

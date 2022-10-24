@@ -1,13 +1,11 @@
 public class PassengerCars extends Transport implements Competing {
     public PassengerCars(String lada, String grande, double v) {
-
+        super();
     }
-
     @Override
     public void refill() {
-
+        System.out.println("Заправь машину бензином на заправке");
     }
-
     @Override
     public String toString() {
         return "PassengerCars{}";
