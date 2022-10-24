@@ -17,22 +17,23 @@ public abstract class Transport {
         this.color = color;
         this.maximumMovementSpeed = maximumMovementSpeed;
     }
-
     public Transport(String brand, String model, double engineVolume) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
     }
 
+    protected Transport() {
+    }
+
     public void startMoving() {
+        System.out.println("Заводи и начинай движение");
     }
-
     public void finishTheMovement() {
+        System.out.println("Остановись и выключи двигатель");
     }
-    public abstract void refill();
-
-    public Transport() {
-
+    public void refill() {
+        System.out.println("Заправь автомобиль бензином");
     }
 
     public double getEngineVolume() {

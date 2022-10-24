@@ -1,28 +1,13 @@
-public class Driver<P extends Transport> extends Transport  {
+public class Driver<A extends Transport & Competing>{
     public String fIo;
     public boolean thePresenceOfDriverLicense;//наличие водительских прав
     public int experience;//стаж
 
-    public Driver(String brand, String model, double engineVolume, String fIo, boolean thePresenceOfDriverLicense, int experience) {
-        super(brand, model, engineVolume);
+    public Driver(Object egor) {
+        super();
         this.fIo = fIo;
         this.thePresenceOfDriverLicense = thePresenceOfDriverLicense;
         this.experience = experience;
-    }
-
-    @Override
-    public void startMoving() {
-        System.out.println("Заводи и начинай движение");
-    }
-
-    @Override
-    public void finishTheMovement() {
-        System.out.println("Остановись и выключи двигатель");
-    }
-
-    @Override
-    public void refill() {
-        System.out.println("Заправь автомобиль бензином");
     }
 
     public void setExperience(int experience) {
@@ -30,7 +15,7 @@ public class Driver<P extends Transport> extends Transport  {
         this.experience = experience;
     }
 
-    public String getfIo() {
+    public String getFIo() {
         if (fIo != null && !fIo.isBlank() && !fIo.isEmpty())
         return fIo;
         return null;
@@ -42,5 +27,14 @@ public class Driver<P extends Transport> extends Transport  {
 
     public int getExperience() {
         return experience;
+    }
+
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "fIo='" + fIo + '\'' +
+                ", thePresenceOfDriverLicense=" + thePresenceOfDriverLicense +
+                ", experience=" + experience +
+                '}';
     }
 }

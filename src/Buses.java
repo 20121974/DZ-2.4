@@ -1,6 +1,5 @@
 public class Buses extends Transport implements Competing {
     public Buses(String lada, String grande, double i) {
-
     }
 
     @Override
