@@ -1,6 +1,11 @@
-public class PassengerCars extends Transport implements Competing {
-    public PassengerCars(String lada, String grande, double v) {
+import java.util.ArrayList;
+import java.util.List;
+
+public class PassengerCar extends Transport implements Competing {
+    public PassengerCar(String lada, String grande, double v) {
         super();
+        List <String> listOfPassengerCars = new ArrayList<>(50);
+
     }
     @Override
     public void refill() {

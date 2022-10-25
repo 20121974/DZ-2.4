@@ -1,6 +1,10 @@
-public class Buses extends Transport implements Competing {
-    public Buses(String lada, String grande, double i) {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Bus extends Transport implements Competing {
+    public Bus(String lada, String grande, double i) {
         super();
+        List<String> listOfBus = new ArrayList<>(50);
     }
 
     @Override

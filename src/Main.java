@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args, Object egor) {
-        Driver<PassengerCars> egor1 = new Driver<>("Лада");
-        PassengerCars lada = new PassengerCars("Lada", "Grande", 1.7);
+        Driver<PassengerCar> egor1 = new Driver<>("Лада");
+        PassengerCar lada = new PassengerCar("Lada", "Grande", 1.7);
         System.out.println("водитель" + egor1 + "управляет автомобилем" + lada + "и будет участвовать в заезде");
         Driver<Driver.CategoryBDriver> ivan = new Driver<>("lada1");
 

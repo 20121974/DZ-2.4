@@ -1,6 +1,10 @@
-public class Trucks extends Transport implements Competing {
-    public Trucks(String lada, String grande, double v) {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Truck extends Transport implements Competing {
+    public Truck(String lada, String grande, double v) {
         super();
+        List<String> listOfTrucks = new ArrayList<>(50);
     }
 
     @Override
