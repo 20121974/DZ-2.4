@@ -3,6 +3,7 @@ public class Main {
         Driver<PassengerCars> egor1 = new Driver<>("Лада");
         PassengerCars lada = new PassengerCars("Lada", "Grande", 1.7);
         System.out.println("водитель" + egor1 + "управляет автомобилем" + lada + "и будет участвовать в заезде");
+        Driver<Driver.CategoryBDriver> ivan = new Driver<>("lada1");
 
 //        Driver <PassengerCars> egor = new Driver<>("Lada", "Grande", 1.7, "Egor",
 //                true, 5);

@@ -3,6 +3,12 @@ public class Driver<A extends Transport & Competing>{
     public boolean thePresenceOfDriverLicense;//наличие водительских прав
     public int experience;//стаж
 
+    public class CategoryADriver <A extends Transport & Competing>{
+    }
+    public class CategoryBDriver <A extends Transport & Competing> extends Transport implements Competing {
+    }
+    public class CategoryCDriver <A extends Transport & Competing>{
+    }
     public Driver(Object egor) {
         super();
         this.fIo = fIo;
