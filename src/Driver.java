@@ -1,33 +1,19 @@
-public class Driver<A extends Transport & Competing>{
+public class Driver<C> {
     public String fIo;
     public boolean thePresenceOfDriverLicense;//наличие водительских прав
     public int experience;//стаж
 
-    public class CategoryADriver <A extends Transport & Competing>{
-    }
-    public class CategoryBDriver <A extends Transport & Competing> extends Transport implements Competing {
-        @Override
-        public String[] pitStop() {
-            return new String[0];
-        }
-
-        @Override
-        public double bestLapTime() {
-            return 0;
-        }
-
-        @Override
-        public int maximumSpeed() {
-            return 0;
-        }
-    }
-    public class CategoryCDriver <A extends Transport & Competing>{
-    }
-    public Driver(Object egor) {
-        super();
+    public Driver(String fIo, boolean thePresenceOfDriverLicense, int experience, String CategoryCDriver) {
         this.fIo = fIo;
         this.thePresenceOfDriverLicense = thePresenceOfDriverLicense;
         this.experience = experience;
+    Driver<C> = new Driver<CategoryADriver>();
+    Driver<C> = new Driver<CategoryBDriver>();
+    Driver<C> = new Driver<>(CategoryCDriver);
+    }
+
+    public Driver() {
+
     }
 
     public void setExperience(int experience) {
