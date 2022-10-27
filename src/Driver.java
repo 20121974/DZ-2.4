@@ -1,30 +1,23 @@
-public class Driver<C> {
-    public String fIo;
-    public boolean thePresenceOfDriverLicense;//наличие водительских прав
-    public int experience;//стаж
+public class Driver <T extends Transport & Competing> {
+    private String name;
+    private boolean thePresenceOfDriverLicense;//наличие водительских прав
+    private int experience;//стаж
+    private T transport;
 
-    public Driver(String fIo, boolean thePresenceOfDriverLicense, int experience, String CategoryCDriver) {
-        this.fIo = fIo;
+    public Driver(String name, boolean thePresenceOfDriverLicense, int experience, String CategoryCDriver, T transport) {
+        this.name = name;
         this.thePresenceOfDriverLicense = thePresenceOfDriverLicense;
         this.experience = experience;
-    Driver<C> = new Driver<CategoryADriver>();
-    Driver<C> = new Driver<CategoryBDriver>();
-    Driver<C> = new Driver<>(CategoryCDriver);
-    }
-
-    public Driver() {
-
+        this.transport = transport;
     }
 
     public void setExperience(int experience) {
         if (experience > 0)
-        this.experience = experience;
+            this.experience = experience;
     }
 
-    public String getFIo() {
-        if (fIo != null && !fIo.isBlank() && !fIo.isEmpty())
-        return fIo;
-        return null;
+    public T getTransport() {
+        return transport;
     }
 
     public boolean isThePresenceOfDriverLicense() {
@@ -35,12 +28,14 @@ public class Driver<C> {
         return experience;
     }
 
-    @Override
-    public String toString() {
-        return "Driver{" +
-                "fIo='" + fIo + '\'' +
-                ", thePresenceOfDriverLicense=" + thePresenceOfDriverLicense +
-                ", experience=" + experience +
-                '}';
+    public String getName() {
+        if (name != null && !name.isBlank() && !name.isEmpty()) {
+            return name;
+        }
+        return null;
     }
 }
+
+
+
+

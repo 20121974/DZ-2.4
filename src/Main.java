@@ -1,9 +1,11 @@
 public class Main {
+    private static PassengerCar Truck;
+
     public static void main(String[] args, Object egor) {
-        Driver<PassengerCar> egor1 = new Driver<>("Лада");
+        Driver<PassengerCar> egor1 = new Driver<>("Егор", true, 5, "B", Truck );
         PassengerCar lada = new PassengerCar("Lada", "Grande", 1.7);
         System.out.println("водитель" + egor1 + "управляет автомобилем" + lada + "и будет участвовать в заезде");
-        Driver<CategoryBDriver> ivan = new Driver<>("lada1");
+
 
 //        Driver <PassengerCars> egor = new Driver<>("Lada", "Grande", 1.7, "Egor",
 //                true, 5);
