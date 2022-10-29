@@ -1,20 +1,22 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Bus extends Transport implements Competing {
-    public Bus(String lada, String grande, double i) {
-        super();
-        List<String> listOfBus = new ArrayList<>(50);
+    private Set<String> listBus = new HashSet<>();
+    private static Object bus;
+
+    public Bus(Set<String> listBus) {
+        this.listBus = listBus;
+    }
+    public void addListBus(){
+        listBus.add((String) Bus.bus);
+        System.out.println((String) Bus.bus);
     }
 
-    @Override
-    public String toString() {
-        return "Buses{}";
-    }
-
-    @Override
-    public void refill() {
-        System.out.println("Заправь автобус дизелем на заправке");
+    public Set<String> getListBus() {
+        return listBus;
     }
 
     @Override
@@ -30,24 +32,5 @@ public class Bus extends Transport implements Competing {
     @Override
     public int maximumSpeed() {
         return 0;
-    }
-
-    public enum TypeOfCapacity {
-        especiallySmall("до 10 мест"), small("до 25 мест"), average("40-50 мест"),
-        big("60-80 мест"), especiallyBig("100-120 мест");
-        private int numberOfSeats;
-        private String capacity;
-
-        TypeOfCapacity(String capacity) {
-            this.capacity = capacity;
-        }
-
-        public String getCapacity() {
-            return capacity;
-        }
-
-        public void setCapacity(String capacity) {
-            this.capacity = capacity;
-        }
     }
 }

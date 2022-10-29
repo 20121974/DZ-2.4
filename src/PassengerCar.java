@@ -1,16 +1,37 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class PassengerCar extends Transport implements Competing {
-    public PassengerCar(String lada, String grande, double v) {
-        super();
-        List <String> listOfPassengerCars = new ArrayList<>(50);
+    private Set<String> listPassengerCar = new HashSet<>();
+    private static Object passengerCar;
 
+    public PassengerCar(Set<String> listPassengerCar) {
+        this.listPassengerCar = listPassengerCar;
     }
-    @Override
-    public void refill() {
-        System.out.println("Заправь машину бензином на заправке");
+
+//    public PassengerCar(String lada, String grande, double v) {
+//        super();
+//    }
+
+    public void addListPassengerCar(){
+        listPassengerCar.add((String) PassengerCar.passengerCar);
+        System.out.println((String) PassengerCar.passengerCar);
     }
+
+    public Set<String> getListPassengerCar() {
+        return listPassengerCar;
+    }
+//    public PassengerCar(String lada, String grande, double v) {
+//        super();
+//        List <String> listOfPassengerCars = new ArrayList<>(50);
+//
+//    }
+//    @Override
+//    public void refill() {
+//        System.out.println("Заправь машину бензином на заправке");
+//    }
     @Override
     public String toString() {
         return "PassengerCars{}";
@@ -31,30 +52,6 @@ public class PassengerCar extends Transport implements Competing {
         return 0;
     }
 
-    public enum BodyType {
-        Sedan("Седан"), Hatchback("Хетчбек"), Coupe("Купе"), StationWagon("Универсал"), SUV("Внедорожник"), Crossover("Кроссовер"), PickupTruck("Пикап"), Van("Фургон"),
-        Minivan("Минивэн");
-        private String body;
 
-        BodyType(String body) {
-            this.body = body;
-        }
-        public String getBody() {
-            return body;
-        }
-        public void setBody(String body) {
-            this.body = body;
-        }
-
-        public BodyType determineTheTypeOfCar(String body) {
-            for (BodyType bodyType:values()){
-                if (bodyType.getBody().equals(body)) {
-                    return bodyType;
-                }
-            }
-            System.out.println("Данных недостаточно");
-            return null;
-        }
-    }
 
 }
