@@ -23,9 +23,6 @@ public abstract class Transport {
         this.engineVolume = engineVolume;
     }
 
-    public Transport() {
-
-    }
 
     public void startMoving() {
         System.out.println("Заводи и начинай движение");

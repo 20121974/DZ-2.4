@@ -1,5 +1,5 @@
-public class CategoryBDriver extends Driver <Truck> {
-    public CategoryBDriver(String name, boolean thePresenceOfDriverLicense, int experience, String CategoryCDriver, Truck transport) {
+public class CategoryBDriver extends Driver<PassengerCar>{
+    public CategoryBDriver(String name, boolean thePresenceOfDriverLicense, int experience, String CategoryCDriver, PassengerCar transport) {
         super(name, thePresenceOfDriverLicense, experience, CategoryCDriver, transport);
     }
 }
