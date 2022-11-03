@@ -3,22 +3,33 @@ import java.util.LinkedList;
 import java.util.Set;
 
 public class Sponsor {
-//    private String name;
-//    private String companyName;
-//    private Integer amountOfSupport;//сумма поддержки
+    private final String name;
+    private Integer amount;//сумма поддержки
 
-    private Set<String> listOfSponsors = new HashSet<>();
-    private static Object sponsor;
-
-    public Sponsor(Set<String> listOfSponsors) {
-        this.listOfSponsors = listOfSponsors;
-    }
-    public void addListOfSponsors(){
-    listOfSponsors.add((String) Sponsor.sponsor);
-    System.out.println((String) Sponsor.sponsor);
+    public Sponsor(String name, Integer amount) {
+        this.name = name;
+        this.amount = amount;
     }
 
-    public Set<String> getListOfSponsors() {
-        return listOfSponsors;
+    public static Object getSponsor() {
+        return getSponsor();
+    }
+
+    public void toSponsorRace() {
+        System.out.printf("Спонсор %s проспонсировал заезд на %d%n", name, amount);
+    }
+    public String getName() {
+        return name;
+    }
+
+    public Integer getAmount() {
+        return amount;
     }
 }
+
+
+
+
+
+
+

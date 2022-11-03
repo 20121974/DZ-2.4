@@ -12,25 +12,30 @@ public class Driver <T extends Transport & Competing> {
     public Driver(Set<String> listDriver) {
         this.listDriver = listDriver;
     }
-    public void addListDriver(){
-        listDriver.add((String) Driver.driver);
-        System.out.println((String) Driver.driver);
+
+    public Driver(String name, boolean thePresenceOfDriverLicense, int experience, String categoryCDriver, Truck transport) {
+    }
+
+    public Driver(String name, boolean thePresenceOfDriverLicense, int experience, String categoryCDriver, Bus transport) {
     }
 
     public Set<String> getListDriver() {
         return listDriver;
     }
 
-    public Driver(String name, boolean thePresenceOfDriverLicense, int experience, String CategoryCDriver, T transport) {
+    public Driver(String name, boolean thePresenceOfDriverLicense, int experience, String CategoryCDriver, PassengerCar transport) {
         this.name = name;
         this.thePresenceOfDriverLicense = thePresenceOfDriverLicense;
         this.experience = experience;
-        this.transport = transport;
     }
 
     public void setExperience(int experience) {
         if (experience > 0)
             this.experience = experience;
+    }
+
+    public static Object getDriver() {
+        return driver;
     }
 
     public T getTransport() {

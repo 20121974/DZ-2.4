@@ -1,35 +1,27 @@
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class Main {
-    private static PassengerCar Truck;
 
-    public static void main(String[] args, Object egor) {
-//        Driver<PassengerCar> egor1 = new Driver<>("Егор", true, 5, "B", Truck );
-////        PassengerCar lada = new PassengerCar("Lada", "Grande", 1.7);
-//        System.out.println("водитель" + egor1 + "управляет автомобилем" + lada + "и будет участвовать в заезде");
+    public static void main(String[] args) {
+        Set<Transport> transports = new HashSet<>();
+        PassengerCar kia = new PassengerCar("Kia", "Sport cars 4 поколение", 7.4);
+        kia.addDriver("Egor", true, 5, "B", kia);
+        kia.addSponsor("Газпром");
+        kia.addMechanic("Ivan");
 
+        Truck bmv = new Truck("BMW", "Z8", 7.0);
+        bmv.addDriver("Oleg", true, 5, "B", bmv);
+        bmv.addSponsor("URAL");
+        bmv.addMechanic("Bob");
 
-//        Driver <PassengerCars> egor = new Driver<>("Lada", "Grande", 1.7, "Egor",
-//                true, 5);
-//        egor.toString();
-//        Transport audi = new PassengerCars("Audi", "A8 50 L TDI quattro",  3.0);
-//        Driver <PassengerCars> ivan = new Driver<>("Audi", "A8 50 L TDI quattro",  3.0, "Ivan",
-//                true, 4);
-//        Transport bmv = new PassengerCars("BMW", "Z8", 3.0);
-//        Driver <PassengerCars> maxim = new Driver<>("Audi", "A8 50 L TDI quattro",  3.0, "Ivan",
-//                true, 4);
-//        Transport kia = new PassengerCars("Kia", "Sportage 4 поколение", 2.4);
-//
-//        Transport lada1 = new Trucks("Lada", "Grande", 7.7);
-//        Transport audi1 = new Trucks("Audi", "A8 50 L TDI quattro",  7.0);
-//        Transport bmv1 = new Trucks("BMW", "Z8", 7.0);
-//        Transport kia1 = new Trucks("Kia", "Sportage 4 поколение", 7.4);
-//
-//        Buses lada2 = new Buses ("Lada", "Grande", 5.4);
-//        lada.refill();
-//        Buses audi2 = new Buses("Audi", "A8 50 L TDI quattro", 6.1);
-//        lada.refill();
-//        Buses bmv2 = new Buses("BMW", "Z8", 220);
-//        Buses kia2 = new Buses("Kia", "Sportage 4 поколение", 6.4);
-
+        Bus audi = new Bus("Audi", "A8 50 L TDI quatrain", 6.1);
+        audi.addDriver("Oleg", true, 5, "B", audi);
+        audi.addSponsor("VTB");
+        audi.addMechanic("Tip");
 
     }
+
 }

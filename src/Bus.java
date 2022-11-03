@@ -1,22 +1,30 @@
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class Bus extends Transport implements Competing {
     private Set<String> listBus = new HashSet<>();
-    private static Object bus;
 
-    public Bus(Set<String> listBus) {
-        this.listBus = listBus;
-    }
-    public void addListBus(){
-        listBus.add((String) Bus.bus);
-        System.out.println((String) Bus.bus);
+    public Bus(String brand, String model, double engineVolume) {
+        super(brand, model, engineVolume);
     }
 
     public Set<String> getListBus() {
         return listBus;
+    }
+
+    @Override
+    public String toString() {
+        return "Bus{" +
+                "listBus=" + listBus +
+                '}';
+    }
+    @Override
+    public void refill() {
+        System.out.println("Заправь машину дизелем на заправке");
+    }
+
+    public void addDriver(String oleg, boolean b, int i, String b1, Bus audi) {
+
     }
 
     @Override
