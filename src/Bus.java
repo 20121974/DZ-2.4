@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class Bus extends Transport implements Competing {
@@ -25,6 +26,19 @@ public class Bus extends Transport implements Competing {
 
     public void addDriver(String oleg, boolean b, int i, String b1, Bus audi) {
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Bus bus = (Bus) o;
+        return listBus.equals(bus.listBus);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(listBus);
     }
 
     @Override

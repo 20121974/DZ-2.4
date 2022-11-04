@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class Driver <T extends Transport & Competing> {
@@ -36,6 +37,21 @@ public class Driver <T extends Transport & Competing> {
 
     public static Object getDriver() {
         return driver;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver<?> driver = (Driver<?>) o;
+        return thePresenceOfDriverLicense == driver.thePresenceOfDriverLicense && experience == driver.experience
+                && Objects.equals(name, driver.name) && Objects.equals(transport, driver.transport)
+                && Objects.equals(listDriver, driver.listDriver);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, thePresenceOfDriverLicense, experience, transport, listDriver);
     }
 
     public T getTransport() {

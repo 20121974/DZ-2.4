@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class PassengerCar extends Transport implements Competing {
@@ -10,6 +11,19 @@ public class PassengerCar extends Transport implements Competing {
 
     public Set<String> getListPassengerCar() {
         return listPassengerCar;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PassengerCar that = (PassengerCar) o;
+        return listPassengerCar.equals(that.listPassengerCar);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(listPassengerCar);
     }
 
     @Override

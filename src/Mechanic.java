@@ -1,5 +1,6 @@
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.Objects;
 import java.util.Set;
 
 public class Mechanic <T extends  Transport> {
@@ -11,6 +12,19 @@ public class Mechanic <T extends  Transport> {
         this.name = name;
         this.surname = surname;
         this.company = company;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Mechanic<?> mechanic = (Mechanic<?>) o;
+        return name.equals(mechanic.name) && surname.equals(mechanic.surname) && company.equals(mechanic.company);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, company);
     }
 
     public static void performMaintenance() {//провести техобслуживание
